@@ -19,6 +19,7 @@ flowchart TB
 
     subgraph AI [AI 集成]
         Parser[简历/JD 解析]
+        Embedding[嵌入向量]
         Matcher[技能匹配引擎]
         ChatBot[聊天机器人]
         Career[职业助手]
@@ -33,7 +34,8 @@ flowchart TB
     Auth --> JWT
     Upload --> FileHandler
     FileHandler --> Parser
-    Parser --> PostgresSql
+    Parser --> Embedding
+    Embedding --> PostgresSql
     Parser --> Files
     AIService --> Parser
     AIService --> Matcher
@@ -127,3 +129,14 @@ seeker/
 - API 文档：https://seeker-api.pigmentv.com/docs
 - 应聘者：账号：mt@qq.com  密码：123456
 - 招聘者：账号：admin@qq.com  密码：123456
+
+## 部分示例图片
+
+
+**应聘者**
+![](backend/uploads/01.png)
+![](backend/uploads/02.png)
+![](backend/uploads/03.png)
+
+**招聘者**
+![](backend/uploads/04.png)
