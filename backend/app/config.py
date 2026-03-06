@@ -31,7 +31,7 @@ class Settings:
 
     SILICONFLOW_API_KEY: str = os.getenv("SILICONFLOW_API_KEY", "")
     SILICONFLOW_API_URL: str = os.getenv("SILICONFLOW_API_URL", "https://api.siliconflow.cn")
-    CHAT_MODEL: str = "Qwen/Qwen3-Omni-30B-A3B-Instruct"
-    EMBEDDING_MODEL: str = "Qwen/Qwen3-Embedding-8B"
+    CHAT_MODEL: str = os.getenv("CHAT_MODEL", "Qwen/Qwen3-Omni-30B-A3B-Instruct")
+    EMBEDDING_MODEL: str = os.getenv("EMBEDDING_MODEL", "Qwen/Qwen3-Embedding-8B")
 
 settings = Settings()
